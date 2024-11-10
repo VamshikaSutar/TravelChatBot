@@ -1,22 +1,8 @@
 import streamlit as st
 
-# Sample dictionary containing prompt-response pairs (you can modify this as needed)
-prompt_response_dict = {
-    "prompt-1": "response-1",
-    "prompt-2": "response-2",
-    "prompt-3": "response-3",
-    "prompt-4": "response-4",
-    "prompt-5": "response-5"
-}
-
-# Function to generate a response based on user input
-def get_response(user_input):
-    # Check if the user input matches a prompt in the dictionary
-    for prompt, response in prompt_response_dict.items():
-        if user_input.lower() in prompt.lower():  # Case-insensitive matching
-            return response
-    # Default response if no match is found
-    return "I'm here to assist! Let me know how I can help."
+# Load and execute code from App.py
+with open("App.py") as file:
+    exec(file.read())
 
 # Streamlit App
 st.title("Chat with TravelBot")
